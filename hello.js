@@ -1,11 +1,8 @@
-// add http module
-var http = require('http');
+var express = require('express');
+var app = express();
 
-// create a server
-var myServer = http.createServer(function(request, response){
-  response.writeHead(200, {"Content-Type" : "text/html"});
-  response.write("Hi Low");
-  response.end();
+app.get('/', function(req, res) {
+  res.send('Hello Express');
 });
 
-myServer.listen(3000);
+var server = app.listen(3000);
